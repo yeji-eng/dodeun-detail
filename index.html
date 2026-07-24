@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>마음이 든든한끼 · 캠페인 안내 | Hearty Meal</title>
+<meta name="description" content="현대해상 x 나비얌 '마음이 든든한끼' 캠페인 상세 안내 (한국어·English·中文·Tiếng Việt)" />
+<style>
+  :root{
+    --navy:#00205B; --cream:#FFF9F0;
+    --amber:#F5A623; --gold:#FFC24B; --orange:#F6921E;
+    --ink:#2b2823; --muted:#8b8478; --nv-muted:#aab4d0;
+    --soft:#F1F7FC; --card:#ffffff; --line:#e9edf2;
+    --radius:20px; --shadow:0 6px 20px rgba(20,30,60,.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+    color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  .wrap{width:100%;max-width:560px;margin:0 auto;padding:0 20px;}
+
+  /* 언어 선택 바 */
+  .langbar{position:sticky;top:0;z-index:100;background:rgba(0,32,91,.96);backdrop-filter:blur(8px);}
+  .langbar .row{display:flex;gap:6px;justify-content:center;padding:9px 10px;flex-wrap:wrap;}
+  .langbtn{border:1.5px solid rgba(255,255,255,.28);background:transparent;color:#dfe6f5;
+    padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:700;cursor:pointer;transition:.15s;}
+  .langbtn:hover{border-color:#fff;color:#fff;}
+  .langbtn.active{background:var(--amber);border-color:var(--amber);color:#fff;}
+
+  /* 배경 띠 */
+  .band{padding:46px 0;}
+  .band-navy{background:var(--navy);color:#fff;}
+  .band-soft{background:var(--soft);}
+
+  /* 01 히어로 */
+  .hero-c{text-align:center;}
+  .h-badge{width:200px;margin:0 auto 22px;border-radius:999px;}
+  .h-title{font-size:clamp(34px,10vw,48px);font-weight:900;line-height:1.12;letter-spacing:-.03em;color:#fff;}
+  .h-mascot{width:230px;margin:24px auto 0;}
+  .h-card{background:#fff;border-radius:26px;padding:30px 24px;margin-top:28px;text-align:center;}
+  .h-card p{color:#3a3833;font-size:15px;line-height:1.8;margin:14px 0;}
+  .h-card p:first-child{margin-top:0;} .h-card p:last-child{margin-bottom:0;}
+
+  /* 02 미션 타임라인 */
+  .panel{background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:26px 22px;}
+  .panel-h{text-align:center;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:18px;}
+  .mtrow{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #f0f2f5;}
+  .mtrow:last-child{border-bottom:none;} .mtrow:first-of-type{padding-top:4px;}
+  .mtnum{width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;}
+  .mtdate{color:var(--muted);font-size:12.5px;}
+  .mttext{font-weight:800;color:var(--navy);font-size:14.5px;margin-top:3px;}
+
+  /* 03 캠페인 안내 */
+  .guidecard{background:#fff;border-radius:24px;padding:32px 24px;text-align:center;}
+  .guidecard .gt{font-size:19px;font-weight:900;color:var(--navy);margin-bottom:16px;}
+  .guidecard p{color:#3a3833;font-size:15px;line-height:1.85;margin:12px 0;}
+  .guidecard p:last-child{margin-bottom:0;}
+
+  /* 04 참여방법 */
+  .jt-s{text-align:center;color:var(--muted);font-weight:700;font-size:15px;}
+  .jt-b{text-align:center;color:var(--navy);font-weight:900;font-size:27px;margin-bottom:22px;letter-spacing:-.02em;}
+  .jbanner{position:relative;margin-bottom:22px;}
+  .jbanner img{width:100%;display:block;}
+  .jb-text{position:absolute;top:0;left:0;height:100%;width:56%;padding-left:28px;
+    display:flex;flex-direction:column;justify-content:center;}
+  .jb-text b{color:#fff;font-weight:900;font-size:clamp(19px,5.6vw,25px);line-height:1.15;letter-spacing:-.02em;margin-bottom:7px;}
+  .jb-text span{color:#cfd7e8;font-size:clamp(10px,2.9vw,12.5px);line-height:1.35;}
+  .jstep{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:20px;margin-bottom:14px;}
+  .jhead{display:flex;gap:11px;align-items:center;margin-bottom:12px;}
+  .jnum{width:28px;height:28px;border-radius:8px;background:var(--orange);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+  .jh{font-size:16.5px;font-weight:800;color:var(--navy);}
+  .part-p{font-size:13.5px;color:#4a4741;line-height:1.75;margin:6px 0;}
+  .part-sub{font-size:14px;font-weight:800;color:var(--navy);margin:14px 0 4px;}
+  .part-note{font-size:12.5px;color:var(--orange);font-weight:700;margin:8px 0;}
+  .part-warn{background:#FFF7EC;border:1px solid #FFE0B2;border-radius:12px;padding:11px 13px;
+    font-size:12.5px;color:#8a5a20;margin:12px 0;line-height:1.6;}
+  .jshot{margin:14px 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);}
+  .review{background:#F6F8FB;border-radius:14px;padding:16px;margin-top:14px;}
+  .review .rorg{font-size:11px;color:var(--muted);margin-bottom:2px;}
+  .review .rorg b{color:var(--navy);}
+  .review .rlink{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 13px;
+    font-weight:700;font-size:13px;color:var(--navy);margin:10px 0;display:flex;justify-content:space-between;gap:8px;}
+  .review .rrow{display:flex;gap:8px;font-size:12px;color:#4a4741;margin:5px 0;}
+  .review .rrow .rl{color:var(--muted);min-width:70px;flex-shrink:0;}
+  .review .rbtn{background:var(--gold);color:#3a2e00;text-align:center;font-weight:800;
+    padding:13px;border-radius:10px;margin-top:12px;font-size:13.5px;}
+
+  /* 05 FAQ */
+  .faqcard{background:#fff;border-radius:24px;padding:32px 22px;}
+  .faqcard .fh{text-align:center;font-size:23px;font-weight:900;color:var(--navy);margin-bottom:24px;}
+  .faq{margin-bottom:20px;}
+  .faq:last-child{margin-bottom:0;}
+  .faq .q{font-size:15.5px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.5;}
+  .faq .a{font-size:13.5px;color:#4a4741;line-height:1.75;}
+
+  /* 06 안내사항 */
+  .notice .nh{font-size:18px;font-weight:800;color:#fff;margin-bottom:16px;}
+  .notice .nl{font-size:13.5px;color:#c3ccdf;line-height:1.7;margin:8px 0;padding-left:2px;}
+
+  footer{padding:26px 0 46px;text-align:center;color:var(--nv-muted);font-size:12px;background:var(--navy);}
+</style>
+</head>
+<body data-lang="ko">
+
+<div class="langbar">
+  <div class="row">
+    <button class="langbtn" data-set="ko">🇰🇷 한국어</button>
+    <button class="langbtn" data-set="en">🇬🇧 English</button>
+    <button class="langbtn" data-set="zh">🇨🇳 中文</button>
+    <button class="langbtn" data-set="vi">🇻🇳 Tiếng Việt</button>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<footer>© 2026 현대해상 · 나비얌 (Nabiyam) · 마음이 든든한끼 캠페인</footer>
+
+<!-- ============================================================
+     ✏️ 글자 수정: 아래 DATA 안의 큰따옴표 " " 사이 글자만 바꾸세요.
+     각 언어(ko / en / zh / vi)가 똑같은 구조예요.
+     ============================================================ -->
+<script>
+const DATA = {
+  ko: {
+    hero:{ title:"마음이 든든한끼",
+      body:["든든한 한 끼가 필요한 나비 친구들! 걱정하지 마세요. 💪",
+        "현대해상이 울산 지역 이주배경 아동·청소년들의 든든한 식사를 응원합니다.",
+        "간단한 미션에 참여하고 식사지원 기프트카드도 받아 보세요! 🌞"] },
+    timeline:{ head:"미션 타임라인", items:[
+      {n:"1", date:"08.03(월) 13:00 ~ 11.30(월) 23:59", text:"앱 소개 퀴즈 완료 → 1만원"},
+      {n:"2", date:"08.10(월) 00:00 ~ 11.30(월) 23:59", text:"방문 가게 인증 미션 → 1만원"},
+      {n:"3", date:"08.17(월) 00:00 ~ 11.30(월) 23:59", text:"방문 가게 인증 미션 → 1만원"},
+      {n:"4", date:"08.24(월) 00:00 ~ 11.30(월) 23:59", text:"방문 가게 인증 미션 + 리뷰 작성 → 1만원"} ] },
+    guide:{ title:"식사 걱정 없이, 건강하게! 🌱", body:[
+      "8월부터 진행되는 총 4개의 미션을 하나씩 완료해 보세요.",
+      "앱 사용법을 익히고, 가게 방문 미션에도 참여하다 보면 식사지원 기프트카드가 차곡차곡 지급됩니다.",
+      "부담 없이 하나씩 미션을 시작해 보세요! 👇"] },
+    join:{ title:["4단계로 끝나는","쉬운 참여방법!"], bannerTitle:"마음이 든든한끼", bannerSub:"현대해상 X 나비얌",
+      steps:[
+        {h:"미션 완료하고 기프트카드 받기", parts:[
+          {t:"p",x:"8월부터 열리는 각 미션을 완료하면 기프트카드 1만원이 지급됩니다."},
+          {t:"p",x:"미션 1(8~11월): 나비얌 앱 소개 퀴즈"},
+          {t:"p",x:"미션 2~4(8~11월): 방문한 가게를 알려주는 인증 미션이에요."},
+          {t:"note",x:"*기프트카드 지급 즉시 사용 가능"} ]},
+        {h:"원하는 방식으로 교환권 구매하기", parts:[
+          {t:"p",x:"받은 기프트카드는 두 가지 방식으로 식권을 구매할 수 있어요. (사용처 탭 > [포장·방문] 혹은 [바코드샵])"},
+          {t:"sub",x:"[포장·방문] > 교환권"},
+          {t:"p",x:"나비얌 포장방문에 입점된 울산 내 식당의 메뉴권이나 금액권을 선택해 교환권을 결제해요. 이용 가능한 식당은 계속 늘어날 예정이에요!"},
+          {t:"sub",x:"[바코드샵] > 모바일상품권"},
+          {t:"p",x:"나비얌 바코드샵에서 마치 기프티콘 같은 바코드 형태의 프랜차이즈 모바일금액권 또는 메뉴권을 구매할 수 있어요."},
+          {t:"img"},
+          {t:"warn",x:"⚠ 교환권은 매장에 직접 방문해서 사용 가능해요. 배달로는 쓸 수 없어요."} ]},
+        {h:"든든한 한 끼 맛있게 즐기기", parts:[
+          {t:"p",x:"교환권과 모바일상품권은 각각 다음의 방법으로 사용할 수 있어요."},
+          {t:"sub",x:"교환권"},
+          {t:"p",x:"교환권을 구매한 식당에서 맛있게 식사하고 현장에서 사장님께 교환권을 보여드려요. 사장님이 '결제하기' 버튼을 눌러주시면 식사 완료!"},
+          {t:"sub",x:"모바일상품권"},
+          {t:"p",x:"기프티콘을 사용하듯 모바일상품권 바코드 혹은 상품권 번호를 활용하여 결제하면 끝! 단, 모든 모바일상품권의 사용은 해당 프랜차이즈의 울산 내 매장에서만 가능합니다."},
+          {t:"p",x:"처음 가는 가게에도 도전해보세요!"} ]},
+        {h:"나만의 울산 맛집 자랑하기", parts:[
+          {t:"p",x:"캠페인을 통해 맛있는 식사를 하면서 어떤 일이 있었나요? 함께 웃고 행복하게 식사했던 시간, 그리고 맛있는 음식들에 대한 이야기를 진심 담아 들려주세요."},
+          {t:"review"} ]} ],
+      review:{ org1:"현대해상", org2:"리부트 울산", org3:"마음이 든든한끼",
+        link:"🧡 후기 작성하고 따뜻한 나눔 이야기가기",
+        periodLabel:"참여 기간 ⓘ", period:"2026. 08. 03.(월) ~ 2026. 11. 30.(월)",
+        openLabel:"오픈 시간", open:"08. 03.(월) 오후 1시부터", button:"리뷰 작성하러 가기" } },
+    faq:{ head:"자주 묻는 질문", items:[
+      {q:"Q. 사전신청은 꼭 해야 하나요?", a:"네, 필수예요. 선착순 500명 마감 시 조기 종료돼요."},
+      {q:"Q. 이주배경 가정이면 누구나 신청할 수 있나요?", a:"네, 아동급식카드가 없어도 참여할 수 있어요. 소속 기관을 통해 안내받은 분들은 바로 신청해주세요."},
+      {q:"Q. 기프트카드는 어디서 쓸 수 있나요?", a:"나비얌 앱에 등록된 울산 가맹점에서 사용할 수 있어요."},
+      {q:"Q. 배달로 주문하면 안 되나요?", a:"나비얌 교환권은 매장에 직접 가야 쓸 수 있어요. 포장 주문도 매장에 직접 가야 하고, 배달의민족, 쿠팡이츠 같은 배달 앱으로는 쓸 수 없어요."},
+      {q:"Q. 기프트카드랑 교환권은 뭐가 달라요?", a:"기프트카드는 퀴즈 미션을 완료하면 받는 선물이에요. 이 기프트카드로 나비얌 앱에서 교환권을 구매해요. 교환권은 포장·방문 식당 이용권, 상품권은 프랜차이즈 매장 이용권이에요."},
+      {q:"Q. 기프트카드 쓸 때 알아둘 게 있나요?", a:"결제 한 건에 기프트카드 1개만 쓸 수 있어요. 교환권 가격이 기프트카드보다 비싸면 차액을 다른 방법으로 추가로 내면 돼요. 기프트카드 금액이 더 크면 남은 금액은 잔액으로 남아요."} ] },
+    notice:{ head:"안내사항", items:[
+      "· 본 캠페인은 현대해상의 후원으로 진행됩니다.",
+      "· 참여 대상은 울산광역시 내 이주배경 가정 아동·청소년입니다.",
+      "· 사전신청은 선착순 500명으로 조기 마감될 수 있습니다.",
+      "· 기프트카드는 나비얌 앱 내 가맹점에서만 사용 가능합니다.",
+      "· 배달(배달의민족, 쿠팡이츠 등)로는 쓸 수 없습니다. 반드시 매장 방문 후 이용 가능합니다.",
+      "· 문의: naviyam.channel.io"] }
+  },
+
+  en: {
+    hero:{ title:"Hearty Meal",
+      body:["To all Nabi friends who need a hearty meal — don't worry. 💪",
+        "Hyundai Marine & Fire supports hearty meals for children and youth from migrant backgrounds in Ulsan.",
+        "Take part in a few simple missions and receive meal-support Gift Cards! 🌞"] },
+    timeline:{ head:"Mission Timeline", items:[
+      {n:"1", date:"Aug 3 (Mon) 13:00 – Nov 30 (Mon) 23:59", text:"Complete the app intro quiz → KRW 10,000"},
+      {n:"2", date:"Aug 10 (Mon) 00:00 – Nov 30 (Mon) 23:59", text:"Verify the store you visited → KRW 10,000"},
+      {n:"3", date:"Aug 17 (Mon) 00:00 – Nov 30 (Mon) 23:59", text:"Verify the store you visited → KRW 10,000"},
+      {n:"4", date:"Aug 24 (Mon) 00:00 – Nov 30 (Mon) 23:59", text:"Verify the store you visited + write a review → KRW 10,000"} ] },
+    guide:{ title:"Eat well, worry-free! 🌱", body:[
+      "Complete the four missions one by one, starting from August.",
+      "As you learn how to use the app and take part in the store visit missions, meal-support Gift Cards are issued one after another.",
+      "Take it easy and start with the first mission! 👇"] },
+    join:{ title:["Easy participation","in just 4 steps!"], bannerTitle:"Hearty Meal", bannerSub:"Hyundai Marine & Fire X Nabiyam",
+      steps:[
+        {h:"Complete a mission and get a Gift Card", parts:[
+          {t:"p",x:"Complete each mission opening from August and you'll receive a KRW 10,000 Gift Card."},
+          {t:"p",x:"Mission 1 (Aug–Nov): Nabiyam app intro quiz"},
+          {t:"p",x:"Missions 2–4 (Aug–Nov): Verification missions where you tell us the store you visited."},
+          {t:"note",x:"*Usable immediately upon issue"} ]},
+        {h:"Buy a Meal Voucher the way you prefer", parts:[
+          {t:"p",x:"Your Gift Card can be used to buy meal vouchers in two ways. (Merchants tab > [Takeout & Dine-in] or [Barcode Shop])"},
+          {t:"sub",x:"[Takeout & Dine-in] > Meal Voucher"},
+          {t:"p",x:"Choose a menu voucher or a value voucher from restaurants in Ulsan registered with Nabiyam Takeout & Dine-in, and pay for the Meal Voucher. More participating restaurants will keep being added!"},
+          {t:"sub",x:"[Barcode Shop] > Mobile Gift Voucher"},
+          {t:"p",x:"In the Nabiyam Barcode Shop, you can buy franchise mobile value vouchers or menu vouchers in barcode form, just like a gifticon."},
+          {t:"img"},
+          {t:"warn",x:"⚠ Meal Vouchers can only be used by visiting the store in person. They cannot be used for delivery."} ]},
+        {h:"Enjoy your hearty meal", parts:[
+          {t:"p",x:"Meal Vouchers and Mobile Gift Vouchers are used as follows."},
+          {t:"sub",x:"Meal Voucher"},
+          {t:"p",x:"Enjoy your meal at the restaurant where you bought the Meal Voucher, and show it to the owner on site. Once the owner taps the \"Pay\" button, you're all done!"},
+          {t:"sub",x:"Mobile Gift Voucher"},
+          {t:"p",x:"Just pay using the voucher's barcode or voucher number, the same way you'd use a gifticon. Note: all Mobile Gift Vouchers can only be used at that franchise's stores within Ulsan."},
+          {t:"p",x:"Try a store you've never been to before!"} ]},
+        {h:"Show off your own favorite Ulsan spot", parts:[
+          {t:"p",x:"What happened while you were enjoying a meal through this campaign? Tell us sincerely about the time you laughed and ate happily together, and about the food you enjoyed."},
+          {t:"review"} ]} ],
+      review:{ org1:"Hyundai Marine & Fire", org2:"REBOOT ULSAN", org3:"Hearty Meal",
+        link:"🧡 Write a review and share a warm story",
+        periodLabel:"Period ⓘ", period:"Aug 3 (Mon), 2026 – Nov 30 (Mon), 2026",
+        openLabel:"Opens", open:"Aug 3 (Mon), from 1:00 PM", button:"Go write a review" } },
+    faq:{ head:"Frequently Asked Questions", items:[
+      {q:"Q. Do I have to pre-register?", a:"Yes, it's required. Registration closes early once 500 spots are filled, first come first served."},
+      {q:"Q. Can anyone from a migrant-background household apply?", a:"Yes — you can join even without a child meal card. If you were informed through your affiliated organization, please apply right away."},
+      {q:"Q. Where can I use the Gift Card?", a:"At Nabiyam partner stores in Ulsan that are registered in the app."},
+      {q:"Q. Can I order delivery?", a:"Nabiyam Meal Vouchers can only be used by going to the store in person. Takeout orders also require visiting the store, and they can't be used on delivery apps such as Baemin or Coupang Eats."},
+      {q:"Q. What's the difference between a Gift Card and a Meal Voucher?", a:"A Gift Card is the reward you receive for completing a quiz mission. You use that Gift Card to buy a Meal Voucher in the Nabiyam app. A Meal Voucher is for Takeout & Dine-in restaurants, while a Mobile Gift Voucher is for franchise stores."},
+      {q:"Q. Anything to know when using the Gift Card?", a:"Only one Gift Card can be used per payment. If the Meal Voucher costs more than the Gift Card, you can pay the difference by another method. If the Gift Card is worth more, the remainder stays as a balance."} ] },
+    notice:{ head:"Notice", items:[
+      "· This campaign is sponsored by Hyundai Marine & Fire Insurance Co., Ltd.",
+      "· Eligible participants are children and youth from migrant-background households in Ulsan Metropolitan City.",
+      "· Pre-registration is limited to 500 people on a first-come, first-served basis and may close early.",
+      "· Gift Cards can only be used at partner stores within the Nabiyam app.",
+      "· They cannot be used for delivery (Baemin, Coupang Eats, etc.). You must visit the store in person to use them.",
+      "· Inquiries: naviyam.channel.io"] }
+  },
+
+  zh: {
+    hero:{ title:"暖心一餐",
+      body:["需要一顿丰盛餐食的 Nabi 小伙伴们！别担心。💪",
+        "现代海上火灾保险支持蔚山地区有移民背景的儿童·青少年吃上一顿丰盛的饭。",
+        "参与简单的任务，还能领取餐费支援礼品卡！🌞"] },
+    timeline:{ head:"任务时间表", items:[
+      {n:"1", date:"08.03（周一）13:00 ~ 11.30（周一）23:59", text:"完成 App 介绍测验 → 1 万韩元"},
+      {n:"2", date:"08.10（周一）00:00 ~ 11.30（周一）23:59", text:"到访店铺认证任务 → 1 万韩元"},
+      {n:"3", date:"08.17（周一）00:00 ~ 11.30（周一）23:59", text:"到访店铺认证任务 → 1 万韩元"},
+      {n:"4", date:"08.24（周一）00:00 ~ 11.30（周一）23:59", text:"到访店铺认证任务 + 撰写评价 → 1 万韩元"} ] },
+    guide:{ title:"不为吃饭发愁，健康每一天！🌱", body:[
+      "请逐一完成从 8 月开始进行的共 4 个任务。",
+      "熟悉 App 使用方法，并参与到店任务，餐费支援礼品卡就会陆续发放。",
+      "轻松地从第一个任务开始吧！👇"] },
+    join:{ title:["4 个步骤即可完成","简单的参与方法！"], bannerTitle:"暖心一餐", bannerSub:"现代海上火灾保险 X Nabiyam",
+      steps:[
+        {h:"完成任务，领取礼品卡", parts:[
+          {t:"p",x:"完成 8 月起陆续开放的各项任务，即可获得 1 万韩元礼品卡。"},
+          {t:"p",x:"任务 1（8~11 月）：Nabiyam App 介绍测验"},
+          {t:"p",x:"任务 2~4（8~11 月）：告知到访店铺的认证任务。"},
+          {t:"note",x:"*礼品卡发放后可立即使用"} ]},
+        {h:"按喜欢的方式购买餐食兑换券", parts:[
+          {t:"p",x:"领取的礼品卡可通过两种方式购买餐券。（使用处标签 >［打包·到店］或［条码商店］）"},
+          {t:"sub",x:"［打包·到店］> 餐食兑换券"},
+          {t:"p",x:"在已入驻 Nabiyam 打包·到店的蔚山餐厅中，选择菜品券或金额券并支付购买餐食兑换券。可使用的餐厅还会持续增加！"},
+          {t:"sub",x:"［条码商店］> 电子礼品券"},
+          {t:"p",x:"在 Nabiyam 条码商店，可以购买类似电子券形式的连锁品牌移动金额券或菜品券。"},
+          {t:"img"},
+          {t:"warn",x:"⚠ 餐食兑换券须亲自到店使用，不可用于外卖配送。"} ]},
+        {h:"美味享用丰盛的一餐", parts:[
+          {t:"p",x:"餐食兑换券与电子礼品券的使用方法如下。"},
+          {t:"sub",x:"餐食兑换券"},
+          {t:"p",x:"在购买餐食兑换券的餐厅用餐后，现场向店主出示兑换券。店主点击「支付」按钮，用餐即完成！"},
+          {t:"sub",x:"电子礼品券"},
+          {t:"p",x:"像使用电子券一样，用电子礼品券的条码或券号完成支付即可！但所有电子礼品券仅可在该连锁品牌位于蔚山的门店使用。"},
+          {t:"p",x:"也大胆挑战第一次去的店铺吧！"} ]},
+        {h:"分享属于你的蔚山美食店", parts:[
+          {t:"p",x:"通过本次活动享用美食时，发生了哪些故事呢？请真诚地分享一起欢笑、幸福用餐的时光，以及那些美味的食物。"},
+          {t:"review"} ]} ],
+      review:{ org1:"现代海上火灾保险", org2:"REBOOT ULSAN", org3:"暖心一餐",
+        link:"🧡 撰写心得，分享温暖的公益故事",
+        periodLabel:"参与期间 ⓘ", period:"2026. 08. 03.（周一）~ 2026. 11. 30.（周一）",
+        openLabel:"开放时间", open:"08. 03.（周一）下午 1 点起", button:"去撰写评价" } },
+    faq:{ head:"常见问题", items:[
+      {q:"Q. 必须提前申请吗？", a:"是的，必须申请。按先到先得，满 500 人即提前截止。"},
+      {q:"Q. 只要是移民背景家庭都可以申请吗？", a:"是的，即使没有儿童供餐卡也可以参与。已通过所属机构获得通知的人士请直接申请。"},
+      {q:"Q. 礼品卡可以在哪里使用？", a:"可在 Nabiyam App 中登记的蔚山加盟店使用。"},
+      {q:"Q. 可以点外卖吗？", a:"Nabiyam 餐食兑换券必须亲自到店才能使用。打包订单也需亲自到店，且无法通过「配送的民族」、Coupang Eats 等外卖 App 使用。"},
+      {q:"Q. 礼品卡和餐食兑换券有什么区别？", a:"礼品卡是完成测验任务后获得的礼物。用这张礼品卡在 Nabiyam App 购买餐食兑换券。餐食兑换券用于打包·到店餐厅，电子礼品券用于连锁品牌门店。"},
+      {q:"Q. 使用礼品卡时有什么需要注意的？", a:"每笔支付只能使用 1 张礼品卡。若餐食兑换券价格高于礼品卡金额，可用其他方式补付差额。若礼品卡金额更高，剩余金额将作为余额保留。"} ] },
+    notice:{ head:"注意事项", items:[
+      "· 本次活动由现代海上火灾保险赞助进行。",
+      "· 参与对象为蔚山广域市内有移民背景家庭的儿童·青少年。",
+      "· 提前申请按先到先得限 500 人，可能提前截止。",
+      "· 礼品卡仅可在 Nabiyam App 内的加盟店使用。",
+      "· 不可用于外卖（配送的民族、Coupang Eats 等）。务必亲自到店后方可使用。",
+      "· 咨询：naviyam.channel.io"] }
+  },
+
+  vi: {
+    hero:{ title:"Bữa ăn ấm lòng",
+      body:["Các bạn Nabi đang cần một bữa ăn no đủ! Đừng lo lắng nhé. 💪",
+        "Hyundai Marine & Fire đồng hành cùng những bữa ăn no đủ cho trẻ em và thanh thiếu niên có nền tảng nhập cư tại khu vực Ulsan.",
+        "Hãy tham gia các nhiệm vụ đơn giản và nhận Thẻ quà tặng hỗ trợ bữa ăn! 🌞"] },
+    timeline:{ head:"Lịch trình nhiệm vụ", items:[
+      {n:"1", date:"03.08 (T2) 13:00 ~ 30.11 (T2) 23:59", text:"Hoàn thành câu đố giới thiệu ứng dụng → 10.000 KRW"},
+      {n:"2", date:"10.08 (T2) 00:00 ~ 30.11 (T2) 23:59", text:"Nhiệm vụ xác nhận cửa hàng đã ghé → 10.000 KRW"},
+      {n:"3", date:"17.08 (T2) 00:00 ~ 30.11 (T2) 23:59", text:"Nhiệm vụ xác nhận cửa hàng đã ghé → 10.000 KRW"},
+      {n:"4", date:"24.08 (T2) 00:00 ~ 30.11 (T2) 23:59", text:"Nhiệm vụ xác nhận cửa hàng đã ghé + viết đánh giá → 10.000 KRW"} ] },
+    guide:{ title:"Ăn uống đầy đủ, không lo lắng! 🌱", body:[
+      "Hãy lần lượt hoàn thành 4 nhiệm vụ được triển khai từ tháng 8.",
+      "Khi bạn làm quen với cách dùng ứng dụng và tham gia các nhiệm vụ ghé thăm cửa hàng, Thẻ quà tặng hỗ trợ bữa ăn sẽ được cấp dần dần.",
+      "Hãy bắt đầu từng nhiệm vụ một cách thoải mái nhé! 👇"] },
+    join:{ title:["Cách tham gia đơn giản","chỉ với 4 bước!"], bannerTitle:"Bữa ăn ấm lòng", bannerSub:"Hyundai Marine & Fire X Nabiyam",
+      steps:[
+        {h:"Hoàn thành nhiệm vụ và nhận Thẻ quà tặng", parts:[
+          {t:"p",x:"Hoàn thành từng nhiệm vụ mở từ tháng 8, bạn sẽ nhận được Thẻ quà tặng 10.000 KRW."},
+          {t:"p",x:"Nhiệm vụ 1 (tháng 8~11): Câu đố giới thiệu ứng dụng Nabiyam"},
+          {t:"p",x:"Nhiệm vụ 2~4 (tháng 8~11): Nhiệm vụ xác nhận, cho biết cửa hàng bạn đã ghé."},
+          {t:"note",x:"*Có thể sử dụng ngay sau khi được cấp"} ]},
+        {h:"Mua Phiếu ăn theo cách bạn muốn", parts:[
+          {t:"p",x:"Thẻ quà tặng nhận được có thể dùng để mua phiếu ăn theo hai cách. (Tab Điểm sử dụng > [Mang về & Tại quán] hoặc [Cửa hàng mã vạch])"},
+          {t:"sub",x:"[Mang về & Tại quán] > Phiếu ăn"},
+          {t:"p",x:"Chọn phiếu món ăn hoặc phiếu mệnh giá của các quán ăn tại Ulsan đã tham gia Nabiyam Mang về & Tại quán và thanh toán Phiếu ăn. Số quán ăn có thể sử dụng sẽ tiếp tục tăng lên!"},
+          {t:"sub",x:"[Cửa hàng mã vạch] > Phiếu quà tặng điện tử"},
+          {t:"p",x:"Tại Cửa hàng mã vạch Nabiyam, bạn có thể mua phiếu mệnh giá hoặc phiếu món ăn của các chuỗi thương hiệu dưới dạng mã vạch, giống như gifticon."},
+          {t:"img"},
+          {t:"warn",x:"⚠ Phiếu ăn chỉ dùng được khi trực tiếp đến cửa hàng. Không dùng được cho giao hàng."} ]},
+        {h:"Thưởng thức bữa ăn no đủ", parts:[
+          {t:"p",x:"Phiếu ăn và Phiếu quà tặng điện tử được sử dụng như sau."},
+          {t:"sub",x:"Phiếu ăn"},
+          {t:"p",x:"Dùng bữa tại quán bạn đã mua phiếu, rồi trình Phiếu ăn cho chủ quán tại chỗ. Khi chủ quán nhấn nút \"Thanh toán\" là hoàn tất!"},
+          {t:"sub",x:"Phiếu quà tặng điện tử"},
+          {t:"p",x:"Chỉ cần thanh toán bằng mã vạch hoặc số phiếu, giống như dùng gifticon! Lưu ý: mọi Phiếu quà tặng điện tử chỉ dùng được tại cửa hàng của chuỗi đó trong khu vực Ulsan."},
+          {t:"p",x:"Hãy thử cả những quán lần đầu ghé nhé!"} ]},
+        {h:"Khoe quán ngon Ulsan của riêng bạn", parts:[
+          {t:"p",x:"Bạn đã có những câu chuyện gì khi thưởng thức bữa ăn qua chiến dịch này? Hãy chia sẻ chân thành về khoảnh khắc cùng cười, cùng ăn vui vẻ và về những món ăn ngon."},
+          {t:"review"} ]} ],
+      review:{ org1:"Hyundai Marine & Fire", org2:"REBOOT ULSAN", org3:"Bữa ăn ấm lòng",
+        link:"🧡 Viết cảm nhận và chia sẻ câu chuyện sẻ chia ấm áp",
+        periodLabel:"Thời gian tham gia ⓘ", period:"03.08.2026 (T2) ~ 30.11.2026 (T2)",
+        openLabel:"Thời gian mở", open:"Từ 13:00 ngày 03.08 (T2)", button:"Đi viết đánh giá" } },
+    faq:{ head:"Câu hỏi thường gặp", items:[
+      {q:"Q. Có bắt buộc đăng ký trước không?", a:"Có, đây là bước bắt buộc. Chương trình có thể kết thúc sớm khi đủ 500 người theo thứ tự đăng ký."},
+      {q:"Q. Cứ là gia đình có nền tảng nhập cư thì đều đăng ký được phải không?", a:"Đúng vậy, bạn vẫn tham gia được ngay cả khi không có thẻ hỗ trợ bữa ăn cho trẻ em. Nếu đã được thông báo qua cơ quan/tổ chức của mình, hãy đăng ký ngay."},
+      {q:"Q. Thẻ quà tặng dùng được ở đâu?", a:"Dùng được tại các cửa hàng liên kết ở Ulsan đã đăng ký trên ứng dụng Nabiyam."},
+      {q:"Q. Đặt giao hàng có được không?", a:"Phiếu ăn Nabiyam chỉ dùng được khi trực tiếp đến cửa hàng. Đơn mang về cũng phải đến tận nơi, và không dùng được trên các ứng dụng giao đồ ăn như Baemin hay Coupang Eats."},
+      {q:"Q. Thẻ quà tặng và Phiếu ăn khác nhau thế nào?", a:"Thẻ quà tặng là phần quà bạn nhận khi hoàn thành nhiệm vụ câu đố. Bạn dùng Thẻ quà tặng đó để mua Phiếu ăn trên ứng dụng Nabiyam. Phiếu ăn dùng cho quán ăn Mang về & Tại quán, còn Phiếu quà tặng điện tử dùng cho cửa hàng thuộc chuỗi thương hiệu."},
+      {q:"Q. Khi dùng Thẻ quà tặng cần lưu ý gì?", a:"Mỗi lần thanh toán chỉ dùng được 1 Thẻ quà tặng. Nếu Phiếu ăn đắt hơn Thẻ quà tặng, bạn có thể trả phần chênh lệch bằng phương thức khác. Nếu Thẻ quà tặng có giá trị lớn hơn, phần còn lại sẽ được giữ làm số dư."} ] },
+    notice:{ head:"Lưu ý", items:[
+      "· Chiến dịch này được thực hiện với sự tài trợ của Hyundai Marine & Fire Insurance Co., Ltd.",
+      "· Đối tượng tham gia là trẻ em và thanh thiếu niên thuộc gia đình có nền tảng nhập cư tại Thành phố Ulsan.",
+      "· Đăng ký trước giới hạn 500 người theo thứ tự và có thể kết thúc sớm.",
+      "· Thẻ quà tặng chỉ sử dụng được tại các cửa hàng liên kết trong ứng dụng Nabiyam.",
+      "· Không sử dụng được cho giao hàng (Baemin, Coupang Eats, v.v.). Bắt buộc phải trực tiếp đến cửa hàng mới sử dụng được.",
+      "· Liên hệ: naviyam.channel.io"] }
+  }
+};
+
+function render(lang){
+  const d = DATA[lang];
+  const h=d.hero, tl=d.timeline, g=d.guide, j=d.join, fq=d.faq, nt=d.notice;
+  const A="images/assets/";
+
+  const timelineRows = tl.items.map(m=>`
+    <div class="mtrow"><div class="mtnum">${m.n}</div>
+      <div><div class="mtdate">${m.date}</div><div class="mttext">${m.text}</div></div></div>`).join("");
+
+  const reviewHTML = (r)=>`
+    <div class="review">
+      <div class="rorg"><b>${r.org1}</b> / ${r.org2} / ${r.org3}</div>
+      <div class="rlink"><span>${r.link}</span><span>›</span></div>
+      <div class="rrow"><span class="rl">${r.periodLabel}</span><span>${r.period}</span></div>
+      <div class="rrow"><span class="rl">${r.openLabel}</span><span>${r.open}</span></div>
+      <div class="rbtn">${r.button}</div>
+    </div>`;
+
+  const partHTML = (p)=>{
+    if(p.t==="img")    return `<div class="jshot"><img src="${A}use.png" alt="app usage" loading="lazy"></div>`;
+    if(p.t==="review") return reviewHTML(j.review);
+    if(p.t==="sub")    return `<div class="part-sub">${p.x}</div>`;
+    if(p.t==="note")   return `<div class="part-note">${p.x}</div>`;
+    if(p.t==="warn")   return `<div class="part-warn">${p.x}</div>`;
+    return `<div class="part-p">${p.x}</div>`;
+  };
+
+  const joinSteps = j.steps.map((s,i)=>`
+    <div class="jstep">
+      <div class="jhead"><div class="jnum">${i+1}</div><div class="jh">${s.h}</div></div>
+      ${s.parts.map(partHTML).join("")}
+    </div>`).join("");
+
+  const faqList = fq.items.map(f=>`
+    <div class="faq"><div class="q">${f.q}</div><div class="a">${f.a}</div></div>`).join("");
+
+  const noticeList = nt.items.map(x=>`<div class="nl">${x}</div>`).join("");
+
+  return `
+  <!-- 01 히어로 (B-1) -->
+  <section class="band band-navy">
+    <div class="wrap hero-c">
+      <img class="h-badge" src="${A}badge.png" alt="현대해상 · 나비얌">
+      <h1 class="h-title">${h.title}</h1>
+      <img class="h-mascot" src="${A}mascot.png" alt="얌이">
+      <div class="h-card">${h.body.map(x=>`<p>${x}</p>`).join("")}</div>
+    </div>
+  </section>
+
+  <!-- 02 미션 타임라인 (B-2) -->
+  <section class="band band-navy" style="padding-top:0">
+    <div class="wrap">
+      <div class="panel">
+        <div class="panel-h">${tl.head}</div>
+        ${timelineRows}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 캠페인 안내 (B-3) -->
+  <section class="band band-navy" style="padding-top:0">
+    <div class="wrap">
+      <div class="guidecard">
+        <div class="gt">${g.title}</div>
+        ${g.body.map(x=>`<p>${x}</p>`).join("")}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 참여방법 4단계 (B-4) -->
+  <section class="band band-soft">
+    <div class="wrap">
+      <div class="jt-s">${j.title[0]}</div>
+      <div class="jt-b">${j.title[1]}</div>
+      <div class="jbanner">
+        <img src="${A}card-bg.png" alt="">
+        <div class="jb-text"><b>${j.bannerTitle}</b><span>${j.bannerSub}</span></div>
+      </div>
+      ${joinSteps}
+    </div>
+  </section>
+
+  <!-- 05 자주 묻는 질문 (B-5) -->
+  <section class="band band-navy">
+    <div class="wrap">
+      <div class="faqcard">
+        <div class="fh">${fq.head}</div>
+        ${faqList}
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 안내사항 (B-6) -->
+  <section class="band band-navy" style="padding-top:0">
+    <div class="wrap">
+      <div class="notice">
+        <div class="nh">${nt.head}</div>
+        ${noticeList}
+      </div>
+    </div>
+  </section>`;
+}
+
+function setLang(lang){
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+  document.getElementById("app").innerHTML = render(lang);
+  document.querySelectorAll(".langbtn").forEach(b=> b.classList.toggle("active", b.dataset.set === lang));
+  window.scrollTo(0,0);
+}
+document.querySelectorAll(".langbtn").forEach(b=> b.addEventListener("click", ()=> setLang(b.dataset.set)));
+(function(){
+  const nav=(navigator.language||"ko").toLowerCase();
+  let start="ko";
+  if(nav.startsWith("en")) start="en";
+  else if(nav.startsWith("zh")) start="zh";
+  else if(nav.startsWith("vi")) start="vi";
+  setLang(start);
+})();
+</script>
+</body>
+</html>
