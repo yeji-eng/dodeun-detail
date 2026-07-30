@@ -384,7 +384,7 @@ function render(lang){
     </div>`;
 
   const partHTML = (p)=>{
-    if(p.t==="img")    return `<div class="jshot"><img src="${A}use.png" alt="app usage" loading="lazy"></div>`;
+    if(p.t==="img")    return `<div class="jshot"><img src="${A}use.png?v=2" alt="app usage" loading="lazy"></div>`;
     if(p.t==="review") return reviewHTML(j.review);
     if(p.t==="sub")    return `<div class="part-sub">${p.x}</div>`;
     if(p.t==="note")   return `<div class="part-note">${p.x}</div>`;
